@@ -1,17 +1,29 @@
 <?php 
 include("template/header.php");
 ?>
-<br/>
-<div class="p-5 mb-4 bg-body rounded-3">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold" style="color: #078a85;">BIENVENIDO AL PANEL</h1>
-        <p class="col-md-8 fs-4 bg-body">
-            ¡Bienvenido al panel de administración de la aplicación!
-            Aquí encontrarás las distintas acciones que puedes realizar en la aplicación.           
-        </p>
-        
-    </div>
-</div>
-<?php 
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800 border-left-primary border-bottom-primary">CPA</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generar carnet</a>
+                    </div>
+
+                    <div class="row">
+
+                        <!-- Content Column -->
+                       <div class="col-lg-6 mb-4">
+                        <h1>Bienvenido a tu perfil de usuario</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, illo fuga? Accusamus molestiae dignissimos sit deserunt, voluptatem quam alias esse ullam autem excepturi dicta temporibus soluta minima deleniti. Quaerat, dolor.</p>
+                        </div>
+                    </div>       
+                <!-- /.container-fluid -->
+                </div> 
+                </div>
+            <!-- End of Main Content -->
+            <?php 
 include("template/footer.php");
 ?>
+
