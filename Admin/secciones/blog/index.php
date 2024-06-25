@@ -24,7 +24,7 @@ $sentencia->bindParam(":ID", $txtID);
 $sentencia->execute();
 }
 //Seleccionar los registros
-$sentencia = $conexion->prepare("SELECT * FROM tabla_blog");
+$sentencia = $conexion->prepare("SELECT * FROM `tbl_blog`");
 $sentencia->execute();
 $lista_blog = $sentencia->fetchAll(PDO::FETCH_ASSOC);
 
@@ -52,8 +52,9 @@ include("../../templates/header.php");?>
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Título</th>
                 <th scope="col">Imágen</th>
+                <th scope="col">Título</th>
+                <th scope="col">Descripción</th>
                 <th scope="col">Acciones</th>
             </tr>
         </thead>

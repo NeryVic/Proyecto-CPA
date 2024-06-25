@@ -6,6 +6,7 @@ $Password = "";
 
 try {
 $conexion = new PDO("mysql:host=$server;dbname=$dataBase", $SuperUser, $Password);
+echo "Conexion realizada con exito";
 // Establecer el modo de error PDO para que lance excepciones
 $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $error){
