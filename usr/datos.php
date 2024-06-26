@@ -65,7 +65,7 @@ include("template/header.php");
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-user"
-                                    id="exampleRepeatPassword" placeholder="Calle">
+                                    id="" placeholder="Calle">
                             </div>
                             <div class="mb-3">
                                 <label for="" class="form-label"></label>
