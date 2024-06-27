@@ -50,6 +50,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name= "dni"
+                                        placeholder="DNI sin espacios ni puntos *">
+                                </div>
+                                <div class="form-group">
                                     <input type="email" class="form-control form-control-user" id="exampleInputEmail"
                                         placeholder="Email Address *">
                                 </div>
