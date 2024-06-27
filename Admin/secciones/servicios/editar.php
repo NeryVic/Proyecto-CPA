@@ -34,9 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
-include("../../templates/header.php");
-?>
-<br>
+include("../../templates/header.php");?>
+</br>
 <div class="card">
     <div class="card-header">Servicios</div>
     <div class="card-body">

@@ -19,13 +19,8 @@ $sentencia = $conexion->prepare("INSERT INTO `tbl_servicios`(`titulo` ,`descripc
     exit();
 
 }
-
-
-
-
-
 include("../../templates/header.php")?>
-
+</br>
 <div class="card">
     <div class="card-header">Servicios</div>
     <div class="card-body">
