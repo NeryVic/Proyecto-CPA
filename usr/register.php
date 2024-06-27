@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Register</title>
+    <title>CPA - Register</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -59,10 +59,12 @@
                                             id="" placeholder="Telefono/Celular *">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user"
-                                            id="" placeholder="Calle">
-                                    </div></div>
+                                    <input type="text" class="form-control form-control-user" id="birthDate" name="birthDate" 
+                                        placeholder="Fecha de Nacimiento *" maxlength="14">
+                                    </div>
+                                    </div>
                                     <div class="form-group row">
+                                        
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
                                             id="exampleInputPassword" placeholder="Password">
@@ -92,6 +94,22 @@
         </div>
 
     </div>
+    <script>
+        document.getElementById('birthDate').addEventListener('input', function(e) {
+            let input = e.target.value.replace(/\D/g, '').substring(0, 8); // Elimina todo lo que no sean dígitos y limita a 8 caracteres
+            let day = input.substring(0, 2);
+            let month = input.substring(2, 4);
+            let year = input.substring(4, 8);
+
+            if (input.length > 4) {
+                e.target.value = `${day} / ${month} / ${year}`;
+            } else if (input.length > 2) {
+                e.target.value = `${day} / ${month}`;
+            } else if (input.length > 0) {
+                e.target.value = `${day}`;
+            }
+        });
+    </script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
