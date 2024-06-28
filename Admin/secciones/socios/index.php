@@ -23,7 +23,6 @@ include("../../templates/header.php")?>
                 <th scope="col">D.N.I</th>
                 <th scope="col">Tel/Cel</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Imagen de perfil</th>
             </tr>
         </thead>
         <tbody>
@@ -48,4 +47,8 @@ include("../../templates/header.php")?>
     <div class="card-footer text-muted"></div>
 </div>
 
+<<<<<<< HEAD
 <?php include("../../templates/footer.php")?>
+=======
+<?php include("../../templates/footer.php")?>
+>>>>>>> f8aa8a55e8a08b462dbbf60ba6ee4bd85a714f4d
