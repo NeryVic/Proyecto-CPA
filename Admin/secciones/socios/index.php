@@ -25,7 +25,6 @@ include("../../templates/header.php")?>
                 <th scope="col">D.N.I</th>
                 <th scope="col">Tel/Cel</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Imagen de perfil</th>
             </tr>
         </thead>
         <tbody>
@@ -51,4 +50,3 @@ include("../../templates/header.php")?>
 </div>
 
 <?php include("../../templates/footer.php")?>
-`tbl_users`

@@ -39,7 +39,8 @@ $url_base="http://localhost/proyecto-CPA/admin/";
                     <a class=" nav-link active" href="<?php echo $url_base;?>secciones/servicios/">Servicios</a>
                     <a class=" nav-link active" href="<?php echo $url_base;?>secciones/portfolio/">Portfolio</a>
                     <a class=" nav-link active" href="<?php echo $url_base;?>secciones/blog/">Blog</a>
-                    <a class=" nav-link active" href="<?php echo $url_base;?>secciones/socios/">Usuarios</a>
+                    <a class=" nav-link active" href="<?php echo $url_base;?>secciones/socios/">Socios</a>
+                    <a class=" nav-link active" href="<?php echo $url_base;?>secciones/Admins/">Admins</a>
                     <a class=" nav-link active" href="<?php echo $url_base;?>cerrar.php" >Cerrar sesión</a>
                 </div>
                 

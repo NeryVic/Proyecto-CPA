@@ -54,5 +54,3 @@ include("../../templates/header.php")?>
     <div class="card-footer text-muted"></div>
 </div>
 <?php include("../../templates/footer.php")?>
-
-SELECT * FROM `tbl_servicios`
