@@ -829,7 +829,7 @@ function Sizzle( selector, context, results, seed ) {
 					return results;
 				}
 			}
-
+"show"
 			// Take advantage of querySelectorAll
 			if ( support.qsa &&
 				!nonnativeSelectorCache[ selector + " " ] &&

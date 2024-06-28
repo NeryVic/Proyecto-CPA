@@ -28,12 +28,13 @@ include("../../templates/header.php")?>
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>D.N.I</th>
+                                            <th>Fecha_Inicio</th>
+                                            <th>Fecha_fin</th>
+                                            <th>Plan</th>
                                             <th>Acciones</th>
                                             
                                             
@@ -41,26 +42,28 @@ include("../../templates/header.php")?>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Apellido</th>
+                                            <th>D.N.I</th>
                                             <th>Age</th>
                                             <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Plan</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td>1</td>
+                                            <td>Pablo Pedro </td>
+                                            <td>Perez Pereira</td>
+                                            <td>33.333.333</td>
+                                            <td>28/06/2024</td>
+                                            <td>28/07/2024</td>
+                                            <td>1 mes</td>
                                             <td>
                                             <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button"><i class="ri-list-settings-line"></i></a>
-                <a href="index.php?txtID=<?php echo $registro['ID']; ?>" onclick="return confirmarEliminacion()" class="btn btn-danger" role="button"><i class="ri-delete-bin-6-line"></i></a>
+                                            <a href="index.php?txtID=<?php echo $registro['ID']; ?>" onclick="return confirmarEliminacion()" class="btn btn-danger" role="button"><i class="ri-delete-bin-6-line"></i></a>
                                             </td>
                                         </tr>
                                        
@@ -85,7 +88,7 @@ include("../../templates/header.php")?>
     <script src="../../../usr/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../../../usr/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../../usr/vendor/datatables/jquery.dataTables.js"></script>
     <script src="../../../usr/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
