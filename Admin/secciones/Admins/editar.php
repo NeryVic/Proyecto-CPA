@@ -23,27 +23,30 @@ if (isset($_GET['txtID'])) {
     $DNI = $registro['DNI'];
     $usuario = $registro['usuario'];
     $password = $registro['password'];
+}
 
-    // Verificar si el formulario ha sido enviado
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // Recuperar los datos del formulario
-        $nombre = $_POST['nombre'];
-        $apellido = $_POST['apellido'];
-        $DNI = $_POST['DNI'];
-        $usuario = $_POST['usuario'];
-        $password = $_POST['password'];
+// Verificar si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recuperar los datos del formulario
+    $nombre = $_POST['nombre'];
+    $apellido = $_POST['apellido'];
+    $DNI = $_POST['DNI'];
+    $usuario = $_POST['usuario'];
+    $password = $_POST['password'];
 
-        // Actualizar los valores
-        $sentencia = $conexion->prepare("UPDATE `tbl_admins` SET nombre = :nombre, apellido = :apellido, DNI = :DNI, usuario = :usuario, password = :password WHERE ID = :ID");
-        $sentencia->bindParam(":nombre", $nombre);
-        $sentencia->bindParam(":apellido", $apellido);
-        $sentencia->bindParam(":DNI", $DNI);
-        $sentencia->bindParam(":usuario", $usuario);
-        $sentencia->bindParam(":password", $password);
-        $sentencia->bindParam(":ID", $txtID); // Asegúrate de vincular el ID también
-        $sentencia->execute();
-    }
+    // Actualizar los valores
+    $sentencia = $conexion->prepare("UPDATE `tbl_admins` SET nombre = :nombre, apellido = :apellido, DNI = :DNI, usuario = :usuario, password = :password WHERE ID = :ID");
+    $sentencia->bindParam(":nombre", $nombre);
+    $sentencia->bindParam(":apellido", $apellido);
+    $sentencia->bindParam(":DNI", $DNI);
+    $sentencia->bindParam(":usuario", $usuario);
+    $sentencia->bindParam(":password", $password);
+    $sentencia->bindParam(":ID", $txtID); // Asegúrate de vincular el ID también
+    $sentencia->execute();
 
+        // Redirigir después de la actualización
+        header("Location: index.php?mensaje=Registro modificado con éxito");
+        exit();
 }
 
 include("../../templates/header.php");
@@ -113,7 +116,7 @@ include("../../templates/header.php");
                     name="password"
                     id="password"
                     aria-describedby="helpId"
-                    placeholder="Contraseña"
+                    placeholder="Contraseña" 
                 />
             </div>
             <button type="submit" class="btn btn-success">Actualizar</button>

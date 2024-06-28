@@ -1,3 +1,36 @@
+
+<?php
+include("../Admin/db.php");
+
+if ($_POST) {
+    $email = $_POST['email'] ?? "";
+    $stmt = $conexion->prepare("SELECT * FROM `users` WHERE `email` = :email");
+    $stmt->bindParam(":email", $email);
+    $stmt->execute();
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        $token = bin2hex(random_bytes(50));
+        $stmt = $conexion->prepare("UPDATE `users` SET `password_reset_token` = :token WHERE `email` = :email");
+        $stmt->bindParam(":token", $token);
+        $stmt->bindParam(":email", $email);
+        $stmt->execute();
+
+        // Enviar correo de recuperación
+        $to = $email;
+        $subject = "Recupera tu contraseña";
+        $message = "Haz clic en el siguiente enlace para restablecer tu contraseña: http://tudominio.com/reset_password.php?token=$token";
+        $headers = "From: no-reply@tudominio.com";
+
+        mail($to, $subject, $message, $headers);
+
+        echo "Se ha enviado un enlace de recuperación a tu correo.";
+    } else {
+        echo "Correo no encontrado.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

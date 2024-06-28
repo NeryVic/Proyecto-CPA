@@ -1,3 +1,42 @@
+<?php 
+include("../Admin/db.php");
+
+
+if ($_POST) {
+    $nombre = $_POST['nombre'] ?? "";
+    $apellido = $_POST['apellido'] ?? "";
+    $DNI = $_POST['DNI'] ?? "";
+    $usuario = $_POST['usuario'] ?? "";
+    $email = $_POST['email'] ?? "";
+    $password = $_POST['password'] ?? "";
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+    $verification_token = bin2hex(random_bytes(50)); // Generar token de verificación
+
+    $stmt = $conexion->prepare("INSERT INTO `users` (`nombre`, `apellido`, `DNI`, `usuario`, `email`, `password`, `verification_token`) VALUES (:nombre, :apellido, :DNI, :usuario, :email, :password, :verification_token)");
+    $stmt->bindParam(":nombre", $nombre);
+    $stmt->bindParam(":apellido", $apellido);
+    $stmt->bindParam(":DNI", $DNI);
+    $stmt->bindParam(":usuario", $usuario);
+    $stmt->bindParam(":email", $email);
+    $stmt->bindParam(":password", $password_hash);
+    $stmt->bindParam(":verification_token", $verification_token);
+    $stmt->execute();
+
+    // Enviar correo de verificación
+    $to = $email;
+    $subject = "Confirma tu correo electrónico";
+    $message = "Haz clic en el siguiente enlace para verificar tu correo: http://tudominio.com/verify.php?token=$verification_token";
+    $headers = "From: no-reply@tudominio.com";
+
+    mail($to, $subject, $message, $headers);
+
+    echo "Registro exitoso. Por favor, verifica tu correo.";
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
