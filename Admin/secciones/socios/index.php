@@ -11,9 +11,7 @@ include("../../templates/header.php")?>
     <a name="" id="" class="btn btn-primary" href="crear.php" role="button">Agregar Registro</a>
     </div>
     <div class="card-body">
-<div
-    class="table-responsive-sm"
->
+<div class="table-responsive-sm">
     <table
         class="table"
     >
@@ -29,13 +27,13 @@ include("../../templates/header.php")?>
         </thead>
         <tbody>
             <tr class="">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>asa</td>
+                <td>sss</td>
+                <td>ddd</td>
+                <td>ff</td>
+                <td>fff</td>
+                <td>fff</td>
+                <td>ff</td>
                 <td>
                 <a href="editar.php?txtID=<?php echo $registro['ID']; ?>" class="btn btn-info" role="button"><i class="ri-list-settings-line"></i></a>
                 <a href="index.php?txtID=<?php echo $registro['ID']; ?>" onclick="return confirmarEliminacion()" class="btn btn-danger" role="button"><i class="ri-delete-bin-6-line"></i></a>
@@ -49,4 +47,8 @@ include("../../templates/header.php")?>
     <div class="card-footer text-muted"></div>
 </div>
 
+<<<<<<< HEAD
 <?php include("../../templates/footer.php")?>
+=======
+<?php include("../../templates/footer.php")?>
+>>>>>>> f8aa8a55e8a08b462dbbf60ba6ee4bd85a714f4d
