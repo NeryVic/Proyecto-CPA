@@ -37,49 +37,51 @@
                         <div class="p-5">
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Create una Cuenta!</h1>
+                                
                             </div>
-                            <form class="user">
+                            <span id="error" class="text-danger"></span>
+                            <form class="user" id="form" action="/submit" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
+                                        <input type="text" class="form-control form-control-user" id="name"
                                             placeholder="Nombre *">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
+                                        <input type="text" class="form-control form-control-user" id="lastName"
                                             placeholder="Apellido/s *">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control form-control-user" id="exampleInputEmail" name= "dni"
+                                    <input type="text" class="form-control form-control-user" id="dni" name= "dni"
                                         placeholder="DNI sin espacios ni puntos *">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                                    <input type="email" class="form-control form-control-user" id="email"
                                         placeholder="Email Address *">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="number" class="form-control form-control-user"
-                                            id="" placeholder="Telefono/Celular *">
+                                        <input type="text" class="form-control form-control-user"
+                                            id="tel" placeholder="Telefono/Celular *">
                                     </div>
                                     <div class="col-sm-6">
                                     <input type="text" class="form-control form-control-user" id="birthDate" name="birthDate" 
-                                        placeholder="Fecha de Nacimiento *" maxlength="14">
+                                        placeholder="dd/mm/aaaa *" maxlength="14">
                                     </div>
                                     </div>
                                     <div class="form-group row">
                                         
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="exampleInputPassword" placeholder="password">
                                     </div>
                                     <div class="col-sm-6">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            id="exampleRepeatPassword" placeholder="password2">
                                     </div>
                                 </div>
-                                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                                    Register Account
+                                <a href="#" class="btn btn-primary btn-user btn-block" id="btn">
+                                    Registrar
                                 </a>
                                 <hr>
                                 
@@ -115,15 +117,7 @@
         });
     </script>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+        <script src="js/registro.js"></script>
 
 </body>
 

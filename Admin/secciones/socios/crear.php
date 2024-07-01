@@ -78,27 +78,39 @@ include("../../templates/header.php")?>
     </div>
     
 <div class="mb-3">
-    <label for="telefono" class="form-label">Telefono/Celular:</label>
+    <label for="fecha_inicio" class="form-label">Fecha_Inicio:</label>
     <input
-        type="number"
+        type="text"
         class="form-control"
-        name="telefono"
-        id="telefono"
+        name="fecha_inicio"
+        id="fecha_inicio"
         aria-describedby="helpId"
-        placeholder="Tel/Cel"
+        placeholder="fecha_inicio"
     />
 </div>
 
     
     <div class="mb-3">
-        <label for="correo" class="form-label">Correo:</label>
+        <label for="fecha_fin" class="form-label">Fecha_fin:</label>
         <input
-            type="email"
+            type="text"
             class="form-control"
-            name="correo"
-            id="correo"
+            name="fecha_fin"
+            id="fecha_fin"
             aria-describedby="helpId"
-            placeholder="Correo"
+            placeholder="Fecha_fin"
+        />
+    </div>
+
+    <div class="mb-3">
+        <label for="plan" class="form-label">Plan:</label>
+        <input
+            type="text"
+            class="form-control"
+            name="plan"
+            id="plan"
+            aria-describedby="helpId"
+            placeholder="plan"
         />
     </div>
     
