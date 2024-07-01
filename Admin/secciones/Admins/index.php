@@ -2,13 +2,23 @@
 include("../../db.php");
 
 if(isset($_GET['txtID'])){
-//Borrar registros
-    $txtID = (isset($_GET['txtID']))? $_GET['txtID'] : "";
+    $txtID = (isset($_GET['txtID'])) ? $_GET['txtID'] : "";
 
-     // Eliminar el registro de la base de datos
-    $sentencia = $conexion->prepare("DELETE FROM tbl_admins WHERE `tbl_admins`.`ID`=:ID");
+    // Comprobar si el ID existe en la base de datos antes de eliminar
+    $sentencia = $conexion->prepare("SELECT * FROM tbl_admins WHERE ID = :ID");
     $sentencia->bindParam(":ID", $txtID);
     $sentencia->execute();
+    $registro = $sentencia->fetch(PDO::FETCH_ASSOC);
+
+    if ($registro) {
+        // Eliminar el registro de la base de datos
+        $sentencia = $conexion->prepare("DELETE FROM tbl_admins WHERE `tbl_admins`.`ID`=:ID");
+        $sentencia->bindParam(":ID", $txtID);
+        $sentencia->execute();
+    } else {
+        $mensaje = "ID no encontrado.";
+        header("Location:index.php?mensaje=".$mensaje);
+    }
 }
 // Seleccionar los registros
 $sentencia = $conexion->prepare("SELECT * FROM `tbl_admins`");

@@ -19,7 +19,7 @@ if($_POST){
         $sentencia->bindParam(":nombre", $nombre);
         $sentencia->bindParam(":apellido", $apellido);
         $sentencia->bindParam(":DNI", $DNI);
-        $sentencia->bindParam(":usuario", $usuario);
+        $sentencia->bindParam(":usuario", $usuario); // Agregar este bindParam
         $sentencia->bindParam(":password", $password_hash);
 
         $sentencia->execute();
