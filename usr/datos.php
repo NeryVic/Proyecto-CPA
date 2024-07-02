@@ -25,7 +25,8 @@ include("template/header.php");
                     <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Modificar datos</h1>
                     </div>
-                    <form class="user">
+
+                    <form class="user" id="form" action="/submit" method="post">
                         <div class="text-center">
                             <label for="" class="form-label"></label>
                             <img class="img-fluid rounded-sm rounded-circle " width="75" height="75" src="../assets/images/person-1.jpg" alt="profile">
@@ -34,8 +35,8 @@ include("template/header.php");
                             <input
                                 type="file"
                                 class="form-control"
-                                name=""
-                                id=""
+                                name="img"
+                                id="img"
                                 placeholder=""
                                 aria-describedby="fileHelpId"
                             />
@@ -53,38 +54,40 @@ include("template/header.php");
                             </div>
                         </div>
                         <div id="fileHelpId" class="form-text">-Para cambiar nombre y apellido debe contactar al administrador</div>
+                        <span class="text-danger" id="error"></span>
                         <hr>
+                        
                         <div class="form-group">
-                            <input type="email" class="form-control form-control-user" id="exampleInputEmail"
+                            <input type="email" class="form-control form-control-user" id="email"
                                 placeholder="Email">
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="number" class="form-control form-control-user"
-                                    id="" placeholder="Telefono/Celular">
+                                <input type="tel" class="form-control form-control-user"
+                                    id="tel" placeholder="Telefono/Celular">
                             </div>
                             <div class="col-sm-6">
                                 <input type="text" class="form-control form-control-user"
-                                    id="" placeholder="Calle">
+                                    id="calle" placeholder="Calle">
                             </div>
                             <div class="mb-3">
                                 <label for="" class="form-label"></label>
                                 <select
                                     class="form-select form-select-lg"
-                                    name=""
-                                    id=""
+                                    name="ciudad"
+                                    id="ciudad"
                                 >
-                                    <option selected>Ciudad</option>
-                                    <option value="">El Colorado</option>
-                                    <option value="">Villa 213</option>
-                                    <option value="">Villafañe</option>
-                                    <option value="">Pirané</option>
-                                    <option value="">Formosa</option>
+                                    <option selected value="">Ciudad</option>
+                                    <option value="El Colorado">El Colorado</option>
+                                    <option value="Villa 213">Villa 213</option>
+                                    <option value="Villafañe">Villafañe</option>
+                                    <option value="Pirané">Pirané</option>
+                                    <option value="Formosa">Formosa</option>
                                 </select>
                             </div>
                             
                         </div>
-                        <a href="login.html" class="btn btn-primary btn-user btn-block">
+                        <a href="#" id="submit" class="btn btn-primary btn-user btn-block">
                             Guardar
                         </a>
                         <a href="index.php" class="btn btn-danger btn-user btn-block">
@@ -105,8 +108,9 @@ include("template/header.php");
         </div>
     </div>
 </div>
-
+<script src="js/datos.js"></script>
 </div>
             <?php 
+            
 include("template/footer.php");
 ?>
