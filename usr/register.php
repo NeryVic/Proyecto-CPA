@@ -82,11 +82,11 @@ if ($_POST) {
                             <form class="user" id="form" action="/submit" method="post">
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="name"
+                                        <input type="text" class="form-control form-control-user" id="name" name="name"
                                             placeholder="Nombre *">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="lastName"
+                                        <input type="text" class="form-control form-control-user" name="lastName" id="lastName"
                                             placeholder="Apellido/s *">
                                     </div>
                                 </div>
@@ -95,28 +95,28 @@ if ($_POST) {
                                         placeholder="DNI sin espacios ni puntos *">
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="email"
+                                    <input type="email" class="form-control form-control-user" name="email" id="email"
                                         placeholder="Email Address *">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user"
-                                            id="tel" placeholder="Telefono/Celular *">
+                                        <input type="tel" class="form-control form-control-user"
+                                            id="tel" name="tel"  placeholder="Telefono/Celular *">
                                     </div>
                                     <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="birthDate" name="birthDate" 
+                                    <input for="birthDate" type="text" class="form-control form-control-user" id="birthDate" name="birthDate" 
                                         placeholder="dd/mm/aaaa *" maxlength="14">
                                     </div>
                                     </div>
                                     <div class="form-group row">
                                         
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="password">
+                                        <input type="password" class="form-control form-control-user" name="pass"
+                                            id="password" placeholder="password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="password2">
+                                        <input type="password" class="form-control form-control-user" name="pass2"
+                                            id="password2" placeholder="repetir password">
                                     </div>
                                 </div>
                                 <a href="#" class="btn btn-primary btn-user btn-block" id="btn">
@@ -139,22 +139,6 @@ if ($_POST) {
         </div>
 
     </div>
-    <script>
-        document.getElementById('birthDate').addEventListener('input', function(e) {
-            let input = e.target.value.replace(/\D/g, '').substring(0, 8); // Elimina todo lo que no sean dígitos y limita a 8 caracteres
-            let day = input.substring(0, 2);
-            let month = input.substring(2, 4);
-            let year = input.substring(4, 8);
-
-            if (input.length > 4) {
-                e.target.value = `${day} / ${month} / ${year}`;
-            } else if (input.length > 2) {
-                e.target.value = `${day} / ${month}`;
-            } else if (input.length > 0) {
-                e.target.value = `${day}`;
-            }
-        });
-    </script>
 
         <script src="js/registro.js"></script>
 
