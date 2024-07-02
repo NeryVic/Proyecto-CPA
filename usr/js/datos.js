@@ -39,6 +39,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             return false;
         }
 
+        const callePattern = /^[a-zA-Z\d\s]+$/;
+        if (!callePattern.test(calleInput)) {
+            showError('La calle solo debe contener caracteres alfanúmericos.');
+            return false;
+        }
+
           // Validar tipo de archivo de imagen
         const file = img.files[0];
         if (file) {
