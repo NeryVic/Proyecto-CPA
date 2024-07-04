@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         // Patrones de validación
         const namePattern = /^[a-zA-Z]+$/;
+        const lastNamePattern = /^[a-zA-Z]+$/;
         const dniPattern = /^[0-9]+$/;
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const telPattern = /^[0-9]+$/;
@@ -43,6 +44,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Validaciones
         if (!namePattern.test(nameInput) || !namePattern.test(lastNameInput)) {
             showError("El nombre y apellido solo deben contener caracteres alfabéticos.");
+            return false;
+        }
+
+        if (!lastNamePattern.test(lastNameInput)) {
+            showError("El apellido solo debe contener caracteres alfabéticos.");
             return false;
         }
 
